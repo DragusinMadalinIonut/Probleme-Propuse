@@ -1,0 +1,16 @@
+<!-- calculare lungime int -->
+
+<body>
+    <input type="text" id="idT" onchange="calcLeght()">
+    </br>
+    <p id="idP"></p>
+    <br/>
+    
+    <script>
+       function calcLeght(){
+         let sir=document.getElementById("idT").value;
+         let L=sir.length;
+         document.getElementById("idP").innerHTML="lungime="+L;
+       }
+    </script>
+   </body>

@@ -1,0 +1,57 @@
+<!-- pagina html pentru verificare daca cea ce este submis in form este nume sau nu -->
+
+<form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" onblur="validateName()" required>
+    <div id="nameError" style="color: red;"></div>
+    <button type="submit" id="submitButton" class="button">Submit</button>
+  </form>
+  
+  <style>
+  .button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.2s ease;
+    margin-top: 20px;
+  }
+  
+  .button:hover {
+    transform: translateY(-2px);
+  }
+  
+  .button:active {
+    transform: translateY(2px);
+  }
+  body {
+    text-align: center;
+}
+  
+  .button.valid {
+    background-color: #2ecc71;
+  }
+  .form {
+    display: inline-block;
+  }
+  </style>
+  
+  <script>
+  function validateName() {
+    const nameInput = document.getElementById('name');
+    const nameError = document.getElementById('nameError');
+    const submitButton = document.getElementById('submitButton');
+    const nameRegex = /^[a-zA-Z]+$/;
+  
+    if (!nameRegex.test(nameInput.value)) {
+      nameError.textContent = 'Please enter a valid name containing only letters';
+      submitButton.classList.remove('valid');
+      nameInput.focus();
+    } else {
+      nameError.textContent = '';
+      submitButton.classList.add('valid');
+    }
+  }
+  </script>
+  

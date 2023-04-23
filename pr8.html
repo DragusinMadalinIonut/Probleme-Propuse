@@ -1,0 +1,23 @@
+<!-- pagina html pentru coumatarea a 2 inputuri -->
+
+<!DOCTYPE html>
+<html>
+<body> //inputurile
+  a: <input type="text" id="id_a">
+  </br>
+  b: <input type="text" id="id_b">
+  </br>
+  </br>
+  <button onclick="comutare()">COMUTA</button>
+  
+  
+  <script>
+     function comutare(){
+       let sir_a=document.getElementById("id_a").value;//citire, proprietate value
+       let sir_b=document.getElementById("id_b").value;
+       document.getElementById("id_a").value=sir_b;//scriere, proprietate value
+       document.getElementById("id_b").value=sir_a;
+     }
+  </script>
+ </body>
+</html>

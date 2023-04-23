@@ -1,0 +1,33 @@
+<!-- pagina html pentru afsarea unui tabel creat in cod -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+ <style>
+  table, th, td {
+    border:1px solid black;
+  }
+ </style>
+</head>
+<body>
+ <button onclick="afisareTabel()">AFISARE TABEL</button>
+ <br/>
+ <div id="idTabel"></div>
+ <script>
+   function afisareTabel(){
+     let name=["Ionescu Ion","Pop Vasile", "Ana Maria"];
+     let address=["Pitesti","Slatina","Craiova"];
+     let age=[10,20,30];
+     let sirTabel="<table><tr><th>Name</th><th>Address</th><th>Age</th></tr>";
+     
+     let N=name.length; //dimensiune vectori
+     for(let i=0;i<N;i++)
+        sirTabel=sirTabel+"<tr><td>"+name[i]+"</td><td>"+address[i]+"</td><td>"+age[i]+"</td></tr>";
+     
+     sirTabel=sirTabel+"</table>";
+     document.getElementById("idTabel").innerHTML=sirTabel;
+   }
+ </script>
+</body>
+</html>
